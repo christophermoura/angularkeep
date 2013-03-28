@@ -6,8 +6,13 @@
 <hr>
 
 <div class="row-fluid">
-  <div class="span11">
+  <div class="span12">
     <div class="box_textarea">
+      
+
+      <button class="btn pull-right" ng-click="change()">
+        <i class="icon-tasks"></i> {{btnNewListLabel}}
+      </button>  
       
       <!-- New note form -->
       <form ng-submit="save()">
@@ -35,22 +40,12 @@
         </ul>
         <button class="btn btn-primary" ng-click="save()">Done</button>
       </div>
+    
             
     </div>
   </div>
-  <div class="span1">
-    <button class="btn btn-primary" ng-click="showTodo=!showTodo">
-      <i class="icon-tasks"></i>
-    </button>
-  </div>
 </div>
 
-<!-- File upload -->
-<form action="/file-upload" class="dropzone" ng-show="showPicture">
-  <div class="fallback">
-    <input name="file" type="file" multiple />
-  </div>
-</form>
 
 <hr>
 
