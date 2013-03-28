@@ -13,12 +13,25 @@ angularkeepApp.controller('MainCtrl',  function ($scope, $location, Note) {
     // Todos list
     $scope.todos = [];
 
+    $scope.btnNewListLabel = 'New list';
+    
+    $scope.change = function(){
+      if ($scope.showTodo) {
+        $scope.btnNewListLabel = 'New list';
+        $scope.showTodo = false;
+      }else{
+        $scope.btnNewListLabel = 'New note';
+        $scope.showTodo = true;
+      }
+    }    
 
     // Save each todo before save the note
     $scope.saveTodo = function(){
       $scope.todos.push($scope.todo);
       $scope.todo = '';
     }
+
+
 
     $scope.save = function() {
       $scope.note.options = $scope.todos;
